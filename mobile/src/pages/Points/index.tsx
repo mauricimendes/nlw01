@@ -4,6 +4,7 @@ import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Image, Alert } fr
 import { Feather as Icon } from '@expo/vector-icons'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import MapView, { Marker } from 'react-native-maps'
+import { Container, Title, ContainerItems, Item } from './style'
 import { SvgUri } from 'react-native-svg'
 import * as Location from 'expo-location'
 import api from '../../serveces/api'
@@ -98,11 +99,11 @@ const Points = () => {
 
     return (
 		<>
-			<View style={styles.container}>
+			<Container >
 				<TouchableOpacity onPress={handleNavigateBack}>
 					<Icon name="arrow-left" size={20} color="#34cb79" />
 				</TouchableOpacity>
-				<Text style={styles.title}>Bem vindo.</Text>
+				<Title style={styles.title}>Bem vindo.</Title>
 				<Text style={styles.description}>Encontre no mapa um ponto de coleta.</Text>
 				<View style={styles.mapContainer}>
 					{ initialPosition[0] !== 0 && (
@@ -134,18 +135,17 @@ const Points = () => {
 						</MapView>
 					)}
 				</View>
-			</View>
-			<View style={styles.itemsContainer}>
-				<ScrollView 
+			</Container>
+			<ContainerItems>
+				<ScrollView
 					horizontal 
 					showsHorizontalScrollIndicator={false}
 					contentContainerStyle={{ paddingHorizontal: 20 }}
 				>
 					{items.map(item => (
-						<TouchableOpacity 
+						<Item 
 							key={String(item.id)} 
 							style={[
-								styles.item, 
 								selectedItems.includes(item.id) ? styles.selectedItem : {},
 							]} 
 							onPress={() => handleSelectItem(item.id)}
@@ -153,10 +153,10 @@ const Points = () => {
 						>
 							<SvgUri width={42} height={42} uri={item.image_url}/>	
 							<Text style={styles.itemTitle}>{item.title}</Text>
-						</TouchableOpacity>
+						</Item>
 					))}
 				</ScrollView>
-			</View>
+			</ContainerItems>
 		</>
 	)
 }
@@ -164,16 +164,9 @@ const Points = () => {
 export default Points
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 32,
-    paddingTop: 20 + Constants.statusBarHeight,
-  },
 
   title: {
-    fontSize: 20,
     fontFamily: 'Ubuntu_700Bold',
-    marginTop: 24,
   },
 
   description: {
@@ -222,30 +215,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto_400Regular',
     color: '#FFF',
     fontSize: 13,
-    lineHeight: 23,
-  },
-
-  itemsContainer: {
-    flexDirection: 'row',
-    marginTop: 16,
-    marginBottom: 32,
-  },
-
-  item: {
-    backgroundColor: '#fff',
-    borderWidth: 2,
-    borderColor: '#eee',
-    height: 120,
-    width: 120,
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingTop: 20,
-    paddingBottom: 16,
-    marginRight: 8,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-
-    textAlign: 'center',
+	lineHeight: 23,
+	alignItems: 'center',
+	justifyContent: 'center',
+	marginLeft: 7
   },
 
   selectedItem: {
