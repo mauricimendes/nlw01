@@ -169,6 +169,7 @@ Para rodar o expo na sua máquina e acessar com o seu celular ou simuladores
 **Rode o expo**
 > expo start
 
-
+**Importante**
+> Esse camando irá abrir uma janela no seu navegador, que terá um IP de lan, é necessário pegar esse ip e adicionalo no arquivo src/serveces/api.tsx 
 
 
