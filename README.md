@@ -120,6 +120,9 @@ Para rodar o frontend na sua máquina
 **Rode a aplicação (certifique-se que o backend esteja rodando)**
 > npm start
 
+**Importante**
+> As imagens do ícones de materiais provavelmente não irão funcionar, vá até o final desse arquivo para mais instruções para fazer as imagens funionarem
+
 
 Tecnologias/libs usadas para construção do Mobile:
 ---------
@@ -173,6 +176,6 @@ Para rodar o expo na sua máquina e acessar com o seu celular ou simuladores
 > expo start
 
 **Importante**
-> Esse camando irá abrir uma janela no seu navegador, que terá um IP de lan, é necessário pegar esse ip e adicionalo no arquivo src/serveces/api.tsx 
+> Esse camando irá abrir uma janela no seu navegador, que terá um IP de lan, é necessário pegar esse ip e adicionalo no arquivo src/serveces/api.tsx. Esse mesmo ip você deve adicionar dentro do projeto server, no arquivo src/controllers/ItemsController.ts
 
 
