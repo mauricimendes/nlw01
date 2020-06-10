@@ -4,6 +4,9 @@ Projeto feito durante a semana Next Level Week #01
 # Para a construção do projeto, usamos a stack NodeJS, ReactJS e React Native (expo), com o template @type-script
 
 
+Necessário ter no seu celular o app Expo instalado para rodar o app mobile
+---------
+
 # Tecnologias/libs usadas para construção do Backend:
 
 
